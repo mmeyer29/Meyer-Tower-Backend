@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use("/starships", require("./routes/starships"));
+app.use("/searches", require("./routes/searches"));
 
 app.use((request, response, next) => {
   response.status(404).send();
