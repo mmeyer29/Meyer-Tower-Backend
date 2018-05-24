@@ -16,6 +16,7 @@ app.use("/results", require("./routes/results"));
 app.use((request, response, next) => {
   response.status(404).send();
 }).use((error, request, response, next) => {
+  console.log(error)
   response.status(500).send(error.message);
 });
 
