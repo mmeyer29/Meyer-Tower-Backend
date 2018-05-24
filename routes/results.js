@@ -26,8 +26,8 @@ router.post("/", (request, response, next) => {
 
 //update
 router.put("/:id", (request, response, next) => {
-  results.update(request.params.id, request.body.result).then(result => {
-    response.status(201).json({result});
+  results.update(request.params.id, request.body.resultsTerm).then(resultsTerm => {
+    response.status(201).json({resultsTerm});
   }).catch(next);
 });
 
