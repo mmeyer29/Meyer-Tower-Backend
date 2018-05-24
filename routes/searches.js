@@ -26,8 +26,8 @@ router.post("/", (request, response, next) => {
 
 //update
 router.put("/:id", (request, response, next) => {
-  searches.update(request.params.id, request.body.search).then(search => {
-    response.status(201).json({search});
+  searches.update(request.params.id, request.body.searchTerm).then(searchTerm => {
+    response.status(201).json({searchTerm});
   }).catch(next);
 });
 
