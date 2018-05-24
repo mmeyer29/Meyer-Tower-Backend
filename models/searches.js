@@ -18,6 +18,7 @@ function create(search) {
 }
 
 function update(id, search){
+  console.log(id, search);
   return database("searches")
   .update(search).where("id", id)
   .returning("*").then(searches => searches[0]);

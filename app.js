@@ -15,10 +15,10 @@ app.use("/searches", require("./routes/searches"));
 app.use("/results", require("./routes/results"));
 
 app.use((request, response, next) => {
-  response.status(404).send();
+  response.status(404).send({error: 'not found'});
 }).use((error, request, response, next) => {
   console.log(error)
-  response.status(500).send(error.message);
+  response.status(500).send({error: error.message});
 });
 
 module.exports = app;
